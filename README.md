@@ -3,11 +3,11 @@
 
 ## Integrantes:
 
-- **Diego Estaban Agudelo Suárez**:
+- **Diego Esteban Agudelo Suárez**: mi rol es desarrollador.
 - **Felipe Martinez Leiva**:  mi rol es  (Product Owner)  
 - **Gerardo Realpe Álvarez**: Hago parte del equipo de desarrollo de software con el rol scrum Master.
 - **Jessica Paola Garrido Galindo**: 
-- **Jonathan Guevara Agudelo**:
+- **Jonathan Guevara Agudelo**: Hago parte del equipo como Desarrollador durante todo el ciclo. En el sprint 1 mi rol es el de Analista.
 
 ## Descripcion del proyecto: 
 
