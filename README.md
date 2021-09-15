@@ -9,3 +9,12 @@
 - **Jessica Paola Garrido Galindo**: 
 - **Jonathan Guevara Agudelo**:
 
+## Descripcion del proyecto: 
+
+### el proyecto contendra los siguientes modulos : 
+
+- Módulo administrador de ventas
+- Módulo para registrar el estado de la venta
+- Gestión de vendedores
+- Gestión de ingreso al sistema de información
+- Gestión de usuarios y roles
