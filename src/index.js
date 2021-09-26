@@ -32,9 +32,11 @@ app.use('/api/productos', productos);
 app.use('/api/ventas', ventas);
 
 // Static Files
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'public/login')))
+
+
 
 // Starting the server
 app.listen(app.get('port'), () => {
     console.log(`Server on port ${app.get('port')}`);
-});
+})
