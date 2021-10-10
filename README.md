@@ -5,7 +5,7 @@
 
 - **Diego Esteban Agudelo Suárez**: mi rol es desarrollador.
 - **Felipe Martinez Leiva**:  mi rol es  (Product Owner)  
-- **Gerardo Realpe Álvarez**: Hago parte del equipo de desarrollo de software con el rol scrum Master.
+- **Gerardo Realpe Álvarez**: Hago parte del equipo de desarrollo de software con el rol scrum Master
 - **Jessica Paola Garrido Galindo**: el rol que voy a desempeñar es de  Administrador BD
 - **Jonathan Guevara Agudelo**: Hago parte del equipo como Desarrollador durante todo el ciclo. En el sprint 1 mi rol es el de Analista.
 
@@ -18,3 +18,4 @@
 - Gestión de vendedores
 - Gestión de ingreso al sistema de información
 - Gestión de usuarios y roles
+
