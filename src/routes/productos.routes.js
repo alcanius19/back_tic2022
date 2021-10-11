@@ -1,5 +1,6 @@
 const { json } = require("express");
 const express = require("express");
+const { reset } = require("nodemon");
 // DEVUELVE UN OBJETO EN EL CUAL ME PERMITE INGRESAR RUTAS
 const router = express.Router();
 // lo importo para hacer consultas
@@ -21,15 +22,14 @@ router.get("/:id", async (req, res) => {
   res.json(productos);
 });
 
-// router.get("/:descripcion", (req, res, next) => {
-//   Productos.findById(req.params.descripcion)
-//     .then((userResponse) => {
-//       res.status(200).json(userResponse);
-//     })
-//     .catch((error) => {
-//       res.status(400).send(error);
-//     });
-// });
+router.get("/descripcion/:desc", async (req, res, next) => {
+  const productos = await Productos.find()
+    .where("descripcion")
+    .equals(req.params.desc);
+
+  console.log(productos);
+  res.json(productos);
+});
 
 router.put("/:id", async (req, res) => {
   const { descripcion, valor_unit, estado, stock } = req.body;
@@ -42,7 +42,6 @@ router.put("/:id", async (req, res) => {
   await Productos.findByIdAndUpdate(req.params.id, producto);
   res.json({ status: "Producto Actualizado" });
 });
-
 
 router.post("/", async (req, res) => {
   try {
