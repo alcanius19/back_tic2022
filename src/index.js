@@ -20,22 +20,19 @@ app.use(express.json());
 app.use(cors({ origin: "*" }));
 
 const clientes = require(path.join(__dirname, "/routes/clientes.routes.js"));
-const vendedores = require(path.join(
-  __dirname,
-  "/routes/vendedores.routes.js"
-));
 const productos = require(path.join(__dirname, "/routes/productos.routes.js"));
 const ventas = require(path.join(__dirname, "/routes/ventas.routes.js"));
+const usuarios = require(path.join(__dirname, "/routes/usuarios.routes.js"));
 
 // Routes
 
 app.use("/api/clientes", clientes);
-app.use("/api/vendedores", vendedores);
 app.use("/api/productos", productos);
 app.use("/api/ventas", ventas);
+app.use("/api/usuarios", usuarios);
 
 // Static Files
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public/login")));
 
 // Starting the server
 app.listen(app.get("port"), () => {
