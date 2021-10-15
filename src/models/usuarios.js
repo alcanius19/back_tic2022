@@ -18,7 +18,7 @@ const UsuarioSchema = Schema({
     required: true,
   },
   estado: {
-    type: Boolean,
+    type: String,
     required: true,
   },
   fecha: {
