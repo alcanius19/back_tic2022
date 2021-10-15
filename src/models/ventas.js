@@ -3,7 +3,8 @@ const { Schema } = mongoose;
 
 const VentasSchema = new Schema({
   codigo: { type: String, required: true },
-  id_cliente: { type: String, required: true },
+  cliente: { type: String, required: true },
+  cedula: { type: Number, required: true },
   id_vendedor: { type: String, required: true },
   descripcion: { type: String, default: "" },
   estado: { type: String, required: true },
