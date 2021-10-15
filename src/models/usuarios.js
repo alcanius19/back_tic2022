@@ -5,10 +5,6 @@ const UsuarioSchema = Schema({
     type: String,
     required: true,
   },
-  cedula: {
-    type: Number,
-    required: true,
-  },
   usuario: {
     type: String,
     required: true,
@@ -22,7 +18,7 @@ const UsuarioSchema = Schema({
     required: true,
   },
   estado: {
-    type: Boolean,
+    type: String,
     required: true,
   },
   fecha: {
