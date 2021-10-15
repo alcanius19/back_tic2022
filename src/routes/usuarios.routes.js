@@ -20,6 +20,7 @@ router.post("/", async (req, res) => {
   const { nombre, usuario, password, rol, estado, fecha } = req.body;
   const usuarios = new Usuarios({
     nombre,
+    cedula,
     usuario,
     password,
     rol,
@@ -34,6 +35,7 @@ router.put("/:id", async (req, res) => {
   const { nombre, usuario, password, rol, estado, fecha } = req.body;
   const usuarios = {
     nombre,
+    cedula,
     usuario,
     password,
     rol,

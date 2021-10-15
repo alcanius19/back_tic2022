@@ -5,6 +5,10 @@ const UsuarioSchema = Schema({
     type: String,
     required: true,
   },
+  cedula: {
+    type: Number,
+    required: true,
+  },
   usuario: {
     type: String,
     required: true,
