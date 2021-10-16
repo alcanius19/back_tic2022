@@ -28,7 +28,6 @@ const usuarios = require(path.join(__dirname, "/routes/usuarios.routes.js"));
 
 app.use("/api/clientes", clientes);
 app.use("/api/productos", productos);
-
 app.use("/api/ventas", ventas);
 app.use("/api/usuarios", usuarios);
 
