@@ -23,6 +23,10 @@ const clientes = require(path.join(__dirname, "/routes/clientes.routes.js"));
 const productos = require(path.join(__dirname, "/routes/productos.routes.js"));
 const ventas = require(path.join(__dirname, "/routes/ventas.routes.js"));
 const usuarios = require(path.join(__dirname, "/routes/usuarios.routes.js"));
+const vendedores = require(path.join(
+  __dirname,
+  "/routes/vendedores.routes.js"
+));
 
 // Routes
 
