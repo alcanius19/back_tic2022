@@ -32,7 +32,6 @@ const vendedores = require(path.join(
 
 app.use("/api/clientes", clientes);
 app.use("/api/productos", productos);
-app.use("/api/vendedores", vendedores);
 app.use("/api/ventas", ventas);
 app.use("/api/usuarios", usuarios);
 
