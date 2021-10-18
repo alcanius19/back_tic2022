@@ -17,8 +17,14 @@ router.get("/codigo/:codigo", async (req, res) => {
   res.json(ventas);
 });
 
-router.get("/idcliente/:id_cliente", async (req, res) => {
-  const ventas = await Ventas.find({ id_cliente: req.params.id_cliente });
+router.get("/cliente/:cliente", async (req, res) => {
+  const ventas = await Ventas.find({ cliente: req.params.cliente });
+  console.log(ventas);
+  res.json(ventas);
+});
+
+router.get("/cedula/:cedula", async (req, res) => {
+  const ventas = await Ventas.find({ cedula: req.params.cedula });
   console.log(ventas);
   res.json(ventas);
 });
@@ -38,7 +44,8 @@ router.get("/idestado/:estado", async (req, res) => {
 router.post("/", async (req, res) => {
   const {
     codigo,
-    id_cliente,
+    cliente,
+    cedula,
     id_vendedor,
     descripcion,
     estado,
@@ -48,7 +55,8 @@ router.post("/", async (req, res) => {
   } = req.body;
   const ventas = new Ventas({
     codigo,
-    id_cliente,
+    cliente,
+    cedula,
     id_vendedor,
     descripcion,
     estado,
@@ -63,7 +71,8 @@ router.post("/", async (req, res) => {
 router.put("/:id", async (req, res) => {
   const {
     codigo,
-    id_cliente,
+    cliente,
+    cedula,
     id_vendedor,
     descripcion,
     estado,
@@ -73,7 +82,8 @@ router.put("/:id", async (req, res) => {
   } = req.body;
   const venta = {
     codigo,
-    id_cliente,
+    cliente,
+    cedula,
     id_vendedor,
     descripcion,
     estado,
@@ -85,8 +95,40 @@ router.put("/:id", async (req, res) => {
   res.json({ status: "actualizado" });
 });
 
+router.put("/codigo/:codigo", async (req, res) => {
+  const {
+    codigo,
+    cliente,
+    cedula,
+    id_vendedor,
+    descripcion,
+    estado,
+    fecha_venta,
+    productos,
+    total,
+  } = req.body;
+  const venta = {
+    codigo,
+    cliente,
+    cedula,
+    id_vendedor,
+    descripcion,
+    estado,
+    fecha_venta,
+    productos,
+    total,
+  };
+  await Ventas.findOneAndUpdate({ codigo: req.params.codigo }, venta);
+  res.json({ status: "actualizado" });
+});
+
 router.delete("/:id", async (req, res) => {
   await Ventas.findByIdAndRemove(req.params.id);
+  res.json({ status: "eliminado" });
+});
+
+router.delete("/codigo/:codigo", async (req, res) => {
+  await Ventas.findOneAndRemove({ codigo: req.params.codigo });
   res.json({ status: "eliminado" });
 });
 
