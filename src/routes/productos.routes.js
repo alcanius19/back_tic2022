@@ -19,7 +19,7 @@ router.get("/:id", async (req, res) => {
     status: "informacion del producto :",
     res: productos,
   });
-  res.json(productos);
+  res.status(201).json(productos);
 });
 
 router.get("/descripcion/:desc", async (req, res, next) => {
@@ -60,6 +60,11 @@ router.post("/", async (req, res) => {
   } catch (error) {
     console.log(error);
   }
+});
+
+router.delete("/:id", async (req, res) => {
+  await Productos.findByIdAndRemove(req.params.id);
+  res.json({ status: "eliminado" });
 });
 
 module.exports = router;
