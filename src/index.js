@@ -27,7 +27,7 @@ const usuarios = require(path.join(__dirname, "/routes/usuarios.routes.js"));
 app.use("/api/productos", productos);
 app.use("/api/ventas", ventas);
 app.use("/api/usuarios", usuarios);
-app.use("/api/usuarios/email", usuarios);
+
 
 // Static Files
 app.use(express.static(path.join(__dirname, "public/login")));

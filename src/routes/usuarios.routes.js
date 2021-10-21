@@ -56,7 +56,7 @@ router.post("/", (req, res) => {
 
 router.get("/email/:mail", async (req, res, next) => {
   const usuarios = await Usuarios.find()
-    .where("descripcion")
+    .where("email")
     .equals(req.params.mail);
 
   console.log(usuarios);
@@ -65,14 +65,10 @@ router.get("/email/:mail", async (req, res, next) => {
 
 
 router.put("/:id", async (req, res) => {
-  const { nombre, email, password, rol, estado, fecha } = req.body;
+  const {  rol, estado } = req.body;
   const usuarios = {
-    nombre,
-    email,
-    password,
     rol,
     estado,
-    fecha,
   };
   await Usuarios.findByIdAndUpdate(req.params.id, usuarios);
   res.json({ status: "actualizado" });
