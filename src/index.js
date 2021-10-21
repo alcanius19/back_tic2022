@@ -17,17 +17,17 @@ app.set("port", process.env.PORT || 4000);
 app.use(morgan("dev"));
 // PERMITE ENVIAR DATOS EN FORMATO JSON
 app.use(express.json());
-app.use(cors({ origin: "*" }));
+app.use(cors());
 
 const productos = require(path.join(__dirname, "/routes/productos.routes.js"));
 const ventas = require(path.join(__dirname, "/routes/ventas.routes.js"));
 const usuarios = require(path.join(__dirname, "/routes/usuarios.routes.js"));
-
 // Routes
 
 app.use("/api/productos", productos);
 app.use("/api/ventas", ventas);
 app.use("/api/usuarios", usuarios);
+
 
 // Static Files
 app.use(express.static(path.join(__dirname, "public/login")));

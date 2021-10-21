@@ -14,12 +14,12 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/:id", async (req, res) => {
-  try {
-    const productos = await Productos.findById(req.params.id);
-    res.json(productos);
-  } catch (err) {
-    console.log("Error");
-  }
+  const productos = await Productos.findById(req.params.id);
+  res.status(201).json({
+    status: "informacion del producto :",
+    res: productos,
+  });
+  res.status(201).json(productos);
 });
 
 router.get("/descripcion/:desc", async (req, res, next) => {
@@ -60,6 +60,11 @@ router.post("/", async (req, res) => {
   } catch (error) {
     console.log(error);
   }
+});
+
+router.delete("/:id", async (req, res) => {
+  await Productos.findByIdAndRemove(req.params.id);
+  res.json({ status: "eliminado" });
 });
 
 module.exports = router;
