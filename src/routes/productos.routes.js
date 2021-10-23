@@ -20,7 +20,7 @@ router.get("/:id", async (req, res) => {
       status: "informacion del producto :",
       res: productos,
     });
-    res.status(201).json(productos);
+    //res.status(201).json(productos);
   } catch (err) {
     console.log(err);
   }
