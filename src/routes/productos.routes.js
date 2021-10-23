@@ -14,12 +14,16 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/:id", async (req, res) => {
-  const productos = await Productos.findById(req.params.id);
-  res.status(201).json({
-    status: "informacion del producto :",
-    res: productos,
-  });
-  res.status(201).json(productos);
+  try {
+    const productos = await Productos.findById(req.params.id);
+    res.status(201).json({
+      status: "informacion del producto :",
+      res: productos,
+    });
+    //res.status(201).json(productos);
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 router.get("/descripcion/:desc", async (req, res, next) => {
